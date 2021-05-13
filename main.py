@@ -10,16 +10,16 @@ def Select_Mode():
         car_mode = 0
         k_Bit.car_stop()
 def neo_water():
-    for index in range(19):
-        strip.set_pixel_color(index, neopixel.colors(NeoPixelColors.BLUE))
+    for index in range(18):
+        strip.set_pixel_color(index, neopixel.rgb(0, 0, 100))
         strip.show()
         basic.pause(100)
-    for index2 in range(19):
-        strip.set_pixel_color(index2, neopixel.colors(NeoPixelColors.PURPLE))
+    for index2 in range(18):
+        strip.set_pixel_color(index2, neopixel.rgb(0, 50, 50))
         strip.show()
         basic.pause(100)
-    for index3 in range(19):
-        strip.set_pixel_color(index3, neopixel.colors(NeoPixelColors.WHITE))
+    for index3 in range(18):
+        strip.set_pixel_color(index3, neopixel.rgb(50, 40, 30))
         strip.show()
         basic.pause(100)
 
@@ -181,20 +181,17 @@ def on_forever():
     elif car_mode == 3:
         car_Tracking()
     if Neo_data == 1:
-        strip.set_pixel_color(randint(0, 18),
-            neopixel.hsl(neopixel.rgb(randint(0, 255), randint(0, 255), randint(0, 255)),
-                255,
-                50))
+        strip.set_pixel_color(randint(0, 17),
+            neopixel.rgb(randint(0, 80), randint(0, 80), randint(0, 80)))
         strip.show()
     elif Neo_data == 2:
         for index4 in range(18):
             strip.set_pixel_color(index4,
-                neopixel.rgb(randint(0, 255), randint(0, 255), randint(0, 255)))
+                neopixel.rgb(randint(0, 100), randint(0, 100), randint(0, 100)))
             strip.show()
             basic.pause(50)
             strip.clear()
     elif Neo_data == 3:
         neo_water()
-    elif Neo_data == 4:
-        strip.show_bar_graph(0, 255)
 basic.forever(on_forever)
+music.play_melody("C F G A G G E E ", 120)

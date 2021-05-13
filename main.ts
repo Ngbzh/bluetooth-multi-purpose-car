@@ -16,13 +16,13 @@ function neo_water () {
         strip.show()
         basic.pause(100)
     }
-    for (let index = 0; index <= 17; index++) {
-        strip.setPixelColor(index, neopixel.rgb(0, 50, 50))
+    for (let index2 = 0; index2 <= 17; index2++) {
+        strip.setPixelColor(index2, neopixel.rgb(0, 50, 50))
         strip.show()
         basic.pause(100)
     }
-    for (let index = 0; index <= 17; index++) {
-        strip.setPixelColor(index, neopixel.rgb(50, 40, 30))
+    for (let index3 = 0; index3 <= 17; index3++) {
+        strip.setPixelColor(index3, neopixel.rgb(50, 40, 30))
         strip.show()
         basic.pause(100)
     }
@@ -144,6 +144,7 @@ function changeColor () {
 function control_music () {
     if (rec_data == "1") {
         music.ringTone(262)
+        music.playMelody("C F G A G G E E ", 120)
     } else if (rec_data == "2") {
         music.ringTone(294)
     } else if (rec_data == "3") {
@@ -185,6 +186,7 @@ let strip: neopixel.Strip = null
 serial.redirectToUSB()
 strip = neopixel.create(DigitalPin.P5, 18, NeoPixelMode.RGB)
 k_Bit.LED_brightness(200)
+music.playMelody("C F G A G G E E ", 120)
 basic.forever(function () {
     distance_val = k_Bit.ultra()
     if (car_mode == 1) {
@@ -198,8 +200,8 @@ basic.forever(function () {
         strip.setPixelColor(randint(0, 17), neopixel.rgb(randint(0, 80), randint(0, 80), randint(0, 80)))
         strip.show()
     } else if (Neo_data == 2) {
-        for (let index = 0; index <= 17; index++) {
-            strip.setPixelColor(index, neopixel.rgb(randint(0, 100), randint(0, 100), randint(0, 100)))
+        for (let index4 = 0; index4 <= 17; index4++) {
+            strip.setPixelColor(index4, neopixel.rgb(randint(0, 100), randint(0, 100), randint(0, 100)))
             strip.show()
             basic.pause(50)
             strip.clear()
